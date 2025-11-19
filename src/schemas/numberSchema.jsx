@@ -1,7 +1,5 @@
-export default function NumberSchema(number) {
-    if (number % 2 === 1) {
-        return number + "prime number";
-    } else {
-        return "not a prime number";
-    };
-}
+import { z } from "zod";
+
+export const numberSchema = z.object({
+  number: z.number().min(1).max(50),
+});;
